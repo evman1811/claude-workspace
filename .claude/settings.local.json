@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "(?i)save to gh",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git add -A && git commit -m \"checkpoint: $(date +'%Y-%m-%d %H:%M')\" && git push"
+          }
+        ]
+      }
+    ]
+  }
+}
