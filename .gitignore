@@ -1,0 +1,3 @@
+# Allow .claude files even if blocked by global gitignore
+!.claude/
+!.claude/**
