@@ -6,7 +6,12 @@
       "Bash(git remote *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(python generate_leads.py)",
+      "Bash(where python3 *)",
+      "Bash(where py *)",
+      "Bash(ls /c/Python*)",
+      "Read(//usr/**)"
     ]
   },
   "hooks": {
