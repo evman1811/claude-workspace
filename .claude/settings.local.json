@@ -11,7 +11,24 @@
       "Bash(where python3 *)",
       "Bash(where py *)",
       "Bash(ls /c/Python*)",
-      "Read(//usr/**)"
+      "Read(//usr/**)",
+      "Read(//c/Users/Evan/Desktop/**)",
+      "Bash(unzip -o post-call-automation.zip -d .)",
+      "Bash(python run_call.py --transcript transcript_2026-06-30.txt --name \"Ryan Fletcher\" --email \"ryan.fletcher@trenthamco.co.uk\" --phone \"07712 884 201\")",
+      "Bash(python -c ' *)",
+      "mcp__claude_ai_Google_Drive__create_file",
+      "Bash(python -c \"import gspread; print\\(gspread.__version__\\)\")",
+      "Bash(python -c \"import google.oauth2; print\\('google-auth ok'\\)\")",
+      "Bash(python -c \"from google_auth_oauthlib.flow import InstalledAppFlow; print\\('oauthlib ok'\\)\")",
+      "mcp__claude_ai_Google_Drive__search_files",
+      "mcp__claude_ai_Google_Drive__list_recent_files",
+      "mcp__claude_ai_Google_Drive__copy_file",
+      "mcp__claude_ai_Google_Drive__read_file_content",
+      "mcp__claude_ai_Google_Drive__download_file_content",
+      "mcp__claude_ai_Google_Drive__get_file_metadata",
+      "mcp__claude_ai_Google_Drive__get_file_permissions",
+      "Skill(update-config)",
+      "Bash(powershell -Command \"Compress-Archive -Path 'post-call-automation' -DestinationPath 'post-call-automation.zip' -Force\")"
     ]
   },
   "hooks": {
