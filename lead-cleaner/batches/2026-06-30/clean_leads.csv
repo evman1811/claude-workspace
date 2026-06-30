@@ -1,0 +1,24 @@
+name,phone,company,flags
+Oliver Bennett,07712 445901,Halcyon Media,
+Amelia Croft,07822 119045,Brightwater Group,
+Thomas Reed,007911 220 184,Halcyon Media,unfixable_phone
+Sophie Marsh,07903 556218,Kingsley Partners,
+Daniel Okafor,07845 661220,Meridian Labs,
+Amelia Croft,07822 119045,Brightwater Group,
+Henry Lawson,07533 909174,Northstar Freight,
+,07688 410559,Kingsley Partners,missing_name
+Grace Mensah,07491 003882,Meridian Labs,
+Ethan Clarke,07700 118246,Oakhill Consulting,
+Isla Forsythe,07900 552013,Northstar Freight,
+Lucas Whitfield,07412 778360,Brightwater Group,
+Maya Patel,07912 345678,Halcyon Media,
+Freya Nolan,07688 410559,Kingsley Partners,
+Samuel Adeyemi,00788863 7705,Oakhill Consulting,unfixable_phone
+Chloe Barnes,07845 220991,,missing_company
+Jack Sullivan,07999 ABC 123,Meridian Labs,unfixable_phone
+Ruby Hastings,07901 663220,Kingsley Partners,
+Leo Fairbanks,07533 118904,Northstar Freight,
+Ivy Chamberlain,,Oakhill Consulting,missing_phone
+Nathan Cole,07412 009553,Brightwater Group,
+Aaron Whitlock,07700 900461,Meridian Labs,
+Eleanor Vance,07845 663207,Oakhill Consulting,
