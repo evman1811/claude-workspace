@@ -1,0 +1,28 @@
+[CALL TRANSCRIPT]
+Direction: Outbound
+Caller: James — Sales Rep, FlowState CRM
+Contact: Daniel — Pryce Talent
+Email: info@prycetalent.co.uk
+Note: Partial transcript (end of call only)
+
+---
+
+James: ...with what we do, just so you've got it on file for when that contract's coming up for renewal?
+
+Daniel: Yeah, you can send something over, that's fine. I can't promise I'll read it but stick it across.
+
+James: No worries, I'll keep it brief. What's the best email?
+
+Daniel: Just info@prycetalent.co.uk, that comes through to us.
+
+James: Great, I'll send that over. And roughly when does the Vincere contract come up — is it a 2026 thing?
+
+Daniel: Yeah, end of 2026 I think, maybe early 2027. Honestly I'd have to check.
+
+James: No problem, I'll make a note to check back nearer the time rather than bug you before then. Appreciate you taking the call, Daniel.
+
+Daniel: All good. Cheers, bye.
+
+James: Cheers, bye.
+
+[Call End]

@@ -1,0 +1,7 @@
+# Never commit your secrets
+.env
+google-service-account.json
+credentials.json
+authorized_user.json
+__pycache__/
+*.pyc

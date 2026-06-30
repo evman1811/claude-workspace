@@ -1,0 +1,14 @@
+# Claude (summary + lead scoring) and Whisper (speech-to-text for audio files)
+anthropic>=0.40.0
+openai>=1.50.0
+
+# Salesforce
+simple-salesforce>=1.12.6
+
+# Google Sheets
+gspread>=6.1.2
+google-auth>=2.34.0
+
+# Helpers
+python-dotenv>=1.0.1
+requests>=2.32.3

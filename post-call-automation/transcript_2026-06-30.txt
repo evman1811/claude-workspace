@@ -1,0 +1,51 @@
+Sales Rep: Hi, is this Ryan Fletcher?
+
+Ryan: Yes, speaking.
+
+Sales Rep: Hi Ryan, this is Jamie calling from Vantage CRM Solutions. You filled in a form on our website last week about automating your follow-up process. Is now a good time?
+
+Ryan: Yeah actually, perfect timing. I was literally just talking to my ops manager about this today.
+
+Sales Rep: Great. So just to understand your situation — what does your follow-up process look like right now?
+
+Ryan: Honestly it's a mess. We've got eight sales reps and they're all doing it differently. Some are logging calls in Salesforce, some are using spreadsheets, some are just relying on memory. We're losing leads because nobody's following up consistently.
+
+Sales Rep: How many leads are coming in roughly per week?
+
+Ryan: We're pulling in about 60 to 80 inbound leads a week. Which sounds great but our conversion rate is terrible — like 11 or 12 percent — because the follow-up falls through the gaps.
+
+Sales Rep: And what's your average deal size?
+
+Ryan: Anywhere from £8,000 to £25,000 depending on the package. Our average is probably around £14,000.
+
+Sales Rep: Right, so if you're dropping even five leads a week at that average, that's a significant chunk.
+
+Ryan: That's exactly the conversation I had with my MD this morning. He's given me a budget to fix this. We need something in place before Q3 starts, so we're talking end of July at the latest.
+
+Sales Rep: Okay, that's very achievable. Can I ask — have you looked at any other solutions, or are you coming in fresh?
+
+Ryan: We had a demo with HubSpot last week but it's too heavy for what we need. We just want something that plugs into our existing Salesforce without rebuilding everything. Their sales guy kept pushing us onto their full CRM which we don't need.
+
+Sales Rep: That's a really common problem — most platforms want you to rip and replace. Our integration sits on top of Salesforce, so your reps keep using what they already know.
+
+Ryan: That's what caught my eye on your site. How long does the onboarding typically take?
+
+Sales Rep: For a team your size, usually two to three weeks. We handle the Salesforce configuration for you, run a training session with the reps, and you're live.
+
+Ryan: That works. Look, I'm going to be straight with you — if the pricing makes sense, I'm ready to move on this quickly. My MD wants it resolved. What are we looking at?
+
+Sales Rep: For eight users with full Salesforce integration and onboarding support, you're looking at £1,200 a month, or we can do an annual upfront at £11,500 which saves you about two and a half grand.
+
+Ryan: The annual makes sense if the product does what it says. Can you send me a one-pager and a proposal I can put in front of my MD? He'll want to see it in writing before we sign anything.
+
+Sales Rep: Absolutely. I'll get that over today. Are you the right person to be signing this off, or is your MD involved in the final decision?
+
+Ryan: It'll be a joint sign-off. I'm the one recommending it, he rubber-stamps it. If I'm happy with the proposal, we can probably have a call with both of us early next week.
+
+Sales Rep: Perfect. I'll send the one-pager across this afternoon. What's the best email for you?
+
+Ryan: It's ryan.fletcher@trenthamco.co.uk. And my direct line is 07712 884 201.
+
+Sales Rep: Got it. I'll copy in our head of onboarding so you've got her contact too. Speak soon, Ryan.
+
+Ryan: Cheers, look forward to it.

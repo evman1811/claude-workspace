@@ -1,0 +1,65 @@
+[CALL TRANSCRIPT]
+Date: 12 March 2025
+Duration: 9m 42s
+Direction: Outbound
+Caller: James Whitfield — Sales Development Rep, FlowState CRM
+Contact: Sarah Bennett — Operations Director, Bennett & Clarke Recruitment
+Phone: +44 7700 900318
+
+---
+
+James: Hi, is this Sarah?
+
+Sarah: Speaking. Who's this?
+
+James: Hi Sarah, my name's James, I'm calling from FlowState CRM. I'll be honest with you — this is a cold call. Is it alright if I take thirty seconds to tell you why I rang, and you can tell me to get lost if it's not relevant?
+
+Sarah: (laughs) Go on then, thirty seconds.
+
+James: Appreciate it. We build CRM software for recruitment agencies that automates the admin side — candidate records, follow-ups, logging calls, all of it gets filled in automatically instead of your consultants typing it by hand. I'm calling agencies around your size because that manual data entry is usually where deals go to die. Does any of that land with you, or am I miles off?
+
+Sarah: No, you're... actually that's pretty timely. Carry on.
+
+James: Oh good. What are you using at the moment?
+
+Sarah: Honestly? A mix. We've got an old Bullhorn setup but half the team just lives in spreadsheets because nobody keeps the CRM updated. It's a mess.
+
+James: Yeah, that's the most common thing I hear. When a consultant has a good call with a candidate or a client, what actually happens to that information?
+
+Sarah: In theory it goes in the system. In practice it gets scribbled on a notepad and half of it's forgotten by Friday. We've lost placements because someone didn't follow up. That's the bit that drives me mad, actually.
+
+James: That's exactly the problem we solve. With FlowState the call gets logged automatically, the notes get written up for them, the candidate record updates itself, and it'll flag "this person hasn't been contacted in 14 days, chase them." How many consultants have you got?
+
+Sarah: Twelve at the moment, looking to hit twenty by the end of the year.
+
+James: Right, so you're scaling — which means this problem gets worse, not better, unless you fix the foundation now. Have you looked at switching systems before?
+
+Sarah: We've talked about it for ages. I actually had two demos booked last month but both got cancelled because we got slammed. It's been on my list. We've got budget set aside for tools this year, it's just been finding something that fits recruitment rather than a generic sales CRM.
+
+James: That's fair, and that's the gap we sit in — we only do recruitment, so it's built around req-to-placement, not generic pipelines. I don't want to oversell on a cold call. The best thing would be a proper twenty-minute demo where I show you it with recruitment data, not slides. Would it be worth getting something in the diary?
+
+Sarah: Yeah, I think it would. What does it cost, roughly, before I waste your time?
+
+James: Totally fair question. For a team your size it's typically around £45 per user per month, so you're looking at the region of £540 a month at twelve seats. No setup fee and it's a rolling contract, so it's not a scary commitment.
+
+Sarah: Okay, that's within what we'd budgeted. Honestly that's less than I expected.
+
+James: Great. When's good for you — I've got Thursday afternoon or Friday morning this week?
+
+Sarah: Thursday afternoon works. Say 2pm? I'll get our team lead Marcus on the call too, he's the one who'd manage the rollout.
+
+James: Perfect, 2pm Thursday, you and Marcus. What's the best email to send the invite to?
+
+Sarah: sarah.bennett@bennettclarke.co.uk. Send it to me and I'll forward to Marcus.
+
+James: Brilliant, sending that over now. And just so I prep the right thing — the main thing you want solved is the follow-ups falling through the cracks and the data entry, yeah?
+
+Sarah: Exactly that. If you can show me my consultants spending less time typing and more time actually placing, you'll have my attention.
+
+James: That's the whole pitch. I'll have it set up with recruitment workflows so you can see it properly. Thanks for giving me the time, Sarah — wasn't expecting it on a cold call.
+
+Sarah: No worries. You caught me on the right day. Speak Thursday.
+
+James: Speak Thursday. Cheers.
+
+[Call End]
