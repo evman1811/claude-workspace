@@ -28,7 +28,9 @@
       "mcp__claude_ai_Google_Drive__get_file_metadata",
       "mcp__claude_ai_Google_Drive__get_file_permissions",
       "Skill(update-config)",
-      "Bash(powershell -Command \"Compress-Archive -Path 'post-call-automation' -DestinationPath 'post-call-automation.zip' -Force\")"
+      "Bash(powershell -Command \"Compress-Archive -Path 'post-call-automation' -DestinationPath 'post-call-automation.zip' -Force\")",
+      "Bash(git rm *)",
+      "Bash(git commit -m ' *)"
     ]
   },
   "hooks": {
