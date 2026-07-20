@@ -1,0 +1,44 @@
+═══════════════════════════════════════════════════════════
+CRM ENTRY  |  2026-07-20
+LEAD SCORE: 22 / 100  Cold
+═══════════════════════════════════════════════════════════
+
+CONTACT DETAILS
+───────────────
+Name:     Mark
+Company:  N/A (Residential)
+Email:    N/A
+Phone:    N/A
+
+SUMMARY
+───────
+Mark is a residential prospect who showed mild interest but is not a sole decision-maker and is currently occupied with other home renovation projects (kitchen done, garden underway). He agreed to receive information and is open to a follow-up call in a few weeks.
+
+KEY POINTS
+──────────
+• Not the sole decision-maker — partner/spouse also involved
+• Currently mid-way through garden renovation, timing is not ideal
+• Agreed to receive a cost breakdown and informational materials
+• Open to a follow-up call in a few weeks
+• No budget discussed or confirmed
+• No urgency or pressing need expressed
+
+NEXT STEPS
+──────────
+1. Send cost breakdown and product/service information to Mark
+2. Schedule a follow-up call in approximately 2-3 weeks
+3. Aim to get both decision-makers on the next call
+
+OBJECTIONS RAISED
+─────────────────
+• Not the sole decision-maker — needs to discuss with partner
+• Poor timing due to ongoing home renovation projects
+• No clear budget established
+
+WHY THIS SCORE
+──────────────
+Mark scores low across most BANT criteria. No budget was discussed, he is not the sole decision-maker, there is no clear or urgent need expressed, and timing is poor due to competing home projects. Engagement was polite but passive — he agreed to receive info mostly to end the conversation. Follow-up potential exists but conversion likelihood is low in the near term.
+
+═══════════════════════════════════════════════════════════
+Scored by: Claude (claude-sonnet-4-6)  |  Threshold: 70
+═══════════════════════════════════════════════════════════
