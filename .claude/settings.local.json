@@ -30,7 +30,22 @@
       "Skill(update-config)",
       "Bash(powershell -Command \"Compress-Archive -Path 'post-call-automation' -DestinationPath 'post-call-automation.zip' -Force\")",
       "Bash(git rm *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(python -c \"import anthropic, dotenv; print\\('anthropic + dotenv OK'\\)\")",
+      "Skill(claude-api)",
+      "Bash(python score_call.py --demo)",
+      "Bash(python score_call.py --transcript transcript_daniel_prycetalent.txt)",
+      "Bash(python score_call.py --transcript transcript_sarah_bennett_2025-03-12.txt)",
+      "Bash(python score_call.py --transcript transcript_2026-06-30.txt)",
+      "Bash(python score_call.py --transcript transcripts/mark_transcript.txt)",
+      "Bash(printf \"\")",
+      "Bash(python score_call.py --transcript /tmp/empty.txt)",
+      "Bash(printf \"asdkjf zzz 9999 ... beep boop nothing here\")",
+      "Bash(python score_call.py --transcript /tmp/gib.txt)",
+      "Bash(python score_call.py --transcript /tmp/nope.txt)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(python score_call.py --folder transcripts)",
+      "Bash(rm -f leads.csv)"
     ]
   },
   "hooks": {
