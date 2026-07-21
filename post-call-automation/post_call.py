@@ -57,10 +57,11 @@ GOOGLE_SERVICE_ACCOUNT_JSON = os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON", "google-s
 HOT_THRESHOLD              = int(os.getenv("HOT_THRESHOLD", "70"))
 
 HERE = Path(__file__).parent
-CREDENTIALS_FILE    = HERE / "credentials.json"
+SERVICE_ACCOUNT_FILE = HERE / GOOGLE_SERVICE_ACCOUNT_JSON
+CREDENTIALS_FILE     = HERE / "credentials.json"
 AUTHORIZED_USER_FILE = Path.home() / ".config" / "gspread" / "authorized_user.json"
-CRM_DIR             = HERE / "crm_entries"
-LOCAL_LOG           = HERE / "call_log.csv"
+CRM_DIR              = HERE / "crm_entries"
+LOCAL_LOG            = HERE / "call_log.csv"
 
 SHEET_HEADER = [
     "Date", "Score", "Rating", "Hot?", "Name", "Company",
@@ -234,6 +235,9 @@ def append_local_log(analysis):
 
 def _gspread_client():
     import gspread
+    if SERVICE_ACCOUNT_FILE.exists():
+        return gspread.service_account(filename=str(SERVICE_ACCOUNT_FILE))
+    # Fall back to OAuth if no service account key is present
     return gspread.oauth(
         credentials_filename=str(CREDENTIALS_FILE),
         authorized_user_filename=str(AUTHORIZED_USER_FILE),
@@ -262,8 +266,8 @@ def save_to_sheets(analysis):
     if not GOOGLE_SHEET_ID:
         print("[Sheets] GOOGLE_SHEET_ID not set — skipped.")
         return
-    if not AUTHORIZED_USER_FILE.exists() and not CREDENTIALS_FILE.exists():
-        print("[Sheets] Not authenticated. Run:  python post_call.py --setup-google")
+    if not SERVICE_ACCOUNT_FILE.exists() and not AUTHORIZED_USER_FILE.exists() and not CREDENTIALS_FILE.exists():
+        print(f"[Sheets] No credentials found. Add {SERVICE_ACCOUNT_FILE.name} to this folder.")
         return
 
     import gspread
