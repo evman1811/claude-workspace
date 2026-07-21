@@ -56,7 +56,11 @@
       "Bash(git log *)",
       "Bash(git diff *)",
       "Bash(git show *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Read(//c/Users/Evan/.rokit/**)",
+      "Bash(mkdir -p \"/c/Users/Evan/rojo\")",
+      "Read(//c/Users/Evan/**)",
+      "Bash(curl -sL -o rojo.zip \"https://github.com/rojo-rbx/rojo/releases/download/v7.7.0/rojo-7.7.0-windows-x86_64.zip\")"
     ]
   },
   "hooks": {
