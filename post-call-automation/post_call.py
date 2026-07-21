@@ -1,33 +1,28 @@
 """
-post_call.py — single-file post-call pipeline
-=============================================
+post_call.py — single-file post-call pipeline (pure Python, no AI APIs required)
+=================================================================================
 Drop a transcript .txt (or audio .mp3) in and this does everything:
 
   1. Transcribe audio → text  (skipped if you give a .txt)
-  2. Claude: summary, key points, next steps, objections, 0-100 score, Hot/Warm/Cold
+  2. Score the lead 0-100 using pure Python BANT keyword analysis
   3. Write a full CRM entry to  crm_entries/<name>_<date>.txt
   4. Append to a local CSV log  call_log.csv  (always works, no setup needed)
-  5. Append to Google Sheets    (needs one-time auth — see SETUP below)
+  5. Append to Google Sheets    (needs service account JSON — see SETUP below)
   6. Push to Salesforce         (optional — needs SF credentials in .env)
 
-SETUP (Google Sheets — one-time, ~5 min):
+SETUP (Google Sheets — one-time):
   1. console.cloud.google.com → new project → Enable Google Sheets API + Drive API
-  2. APIs & Services → Credentials → + Create Credentials → OAuth client ID
-     Application type: Desktop app → Create → Download JSON
-  3. Rename the downloaded file to  credentials.json  and put it next to this file
-  4. Run:  python post_call.py --setup-google
-     Your browser opens → log in → click Allow → done.
-  After that, every run writes straight to your Google Sheet.
+  2. APIs & Services → Credentials → Service Account → Create → Download JSON
+  3. Rename to  google-service-account.json  and put it next to this file
+  4. Share your Google Sheet with the service account email (Editor access)
 
 USAGE:
   python post_call.py transcript.txt
   python post_call.py call.mp3 --name "Sarah Bennett" --email sarah@example.com
-  python post_call.py --setup-google
 """
 
 import argparse
 import csv
-import json
 import os
 import re
 import sys
@@ -68,45 +63,69 @@ SHEET_HEADER = [
     "Email", "Phone", "Summary", "Next Steps", "Why",
 ]
 
-# ── Scoring guide (edit this to change what "hot" means to you) ────────────────
-SCORING_GUIDE = """
-Score the lead from 0 to 100 based on:
-- Budget (25 pts): do they have money to spend / did they mention a budget?
-- Authority (20 pts): are they a decision-maker?
-- Need (25 pts): is there a clear, urgent problem we solve?
-- Timeline (20 pts): are they looking to buy soon (weeks, not "someday")?
-- Engagement (10 pts): were they interested, asking questions, positive?
-Higher = hotter. Be honest and a little strict.
-"""
+# ══════════════════════════════════════════════════════════════════════════════
+# BANT keyword banks  (edit these to tune what scores as hot/warm/cold)
+# ══════════════════════════════════════════════════════════════════════════════
 
-SYSTEM_PROMPT = f"""You are a sales-call analyst. You read a phone call transcript
-between a salesperson and a prospect, then return a strict JSON object.
+_BUDGET_POS = [
+    r'\bbudget\b', r'\bafford\b', r'\bwilling to (pay|spend|invest)\b',
+    r'\binvest(ment)?\b', r'[£$€]\s*\d+', r'\b\d+\s*k\b',
+    r'\bcost is (fine|ok|no problem)\b', r'\bworth it\b', r'\bfund(ing|ed)\b',
+]
+_BUDGET_NEG = [
+    r"can'?t afford", r'\btoo expensive\b', r'\bno budget\b',
+    r'\bout of budget\b', r'\bnot in (the )?budget\b', r'\bcosts? too much\b',
+    r'\bcan'?t justify\b',
+]
 
-{SCORING_GUIDE}
+_AUTHORITY_POS = [
+    r"\bit'?s my (call|decision|choice)\b", r'\bI (decide|sign off|approve)\b',
+    r'\b(director|owner|ceo|founder|head of|vp|vice.president|managing director|md)\b',
+    r'\bmy (own )?business\b', r'\bI run\b', r'\bI'?m in charge\b',
+]
+_AUTHORITY_NEG = [
+    r'\bnot (just )?my (decision|call|choice)\b',
+    r'\b(need|have) to (ask|check|discuss|run it by|get sign.?off)\b',
+    r'\bnot something I.?d (decide|make|do) on my own\b',
+    r'\b(my |the )?(boss|partner|wife|husband|board|committee)\b',
+    r'\bsomeone else\b', r'\bjoint decision\b',
+]
 
-Field extraction rules:
-- "contact_name": full name of the prospect. If only a first name is given, use that.
-- "company": the prospect's employer or business name. Look carefully — it may be mentioned
-  in passing (e.g. "here at Acme", "I work for...", "we at [company]", email domain, etc.).
-  If they are a private individual with no business affiliation, use "Residential".
-  Never leave this blank — always make a best-effort inference from context.
-- "email" / "phone": extract if mentioned, otherwise use "".
+_NEED_POS = [
+    r'\b(need|require|want|looking for|searching for|trying to find)\b',
+    r'\b(problem|issue|challenge|pain|struggle|difficult(y)?)\b',
+    r'\bnot (working|happy|satisfied)\b', r'\bwould (help|benefit)\b',
+    r'\bwe'?re (struggling|having trouble|dealing with)\b',
+]
+_NEED_NEG = [
+    r'\bno (need|problem|issue)\b', r'\bdoing (fine|well|ok)\b',
+    r'\ball (sorted|good|fine)\b', r'\bnot (really )?looking\b', r'\bdon'?t need\b',
+]
 
-Return ONLY valid JSON with exactly these keys:
-{{
-  "contact_name": string,
-  "company": string,
-  "email": string,
-  "phone": string,
-  "summary": string,
-  "key_points": [string],
-  "next_steps": [string],
-  "objections": [string],
-  "score": integer,
-  "rating": "Hot" | "Warm" | "Cold",
-  "reason": string
-}}
-Do not wrap the JSON in markdown. Do not add any commentary."""
+_TIMELINE_POS = [
+    r'\b(soon|urgent|asap|immediately|straight away|right away)\b',
+    r'\bthis (week|month|quarter|year)\b',
+    r'\bin the next (few )?(days?|weeks?|months?)\b',
+    r'\bready to (start|move|go|proceed|buy|sign)\b', r'\bquickly\b',
+]
+_TIMELINE_NEG = [
+    r'\b(someday|eventually|one day|down the line|down the road)\b',
+    r'\bnot (sure|ready) when\b', r'\bno rush\b', r'\bnot yet\b',
+    r'\bnext year\b', r'\bfew months\b', r'\ba while\b', r'\bbit tricky right now\b',
+]
+
+_ENGAGE_POS = [
+    r'\b(interested|excited|keen|eager|enthusiastic)\b',
+    r'\bsounds (good|great|interesting|perfect)\b',
+    r'\b(yes|yeah|absolutely|definitely|certainly|of course)\b',
+    r'\btell me more\b', r'\bsend.{0,20}(info|details|over|brochure|pricing)\b',
+    r'\bhappy to (chat|talk|discuss|hear)\b',
+]
+_ENGAGE_NEG = [
+    r'\bnot (really )?interested\b', r'\bdon'?t think so\b',
+    r'\bjust (looking|browsing|curious)\b', r'\bnot (for me|right now)\b',
+    r'\bwaste of (time|money)\b',
+]
 
 
 # ══════════════════════════════════════════════════════════════════════════════
