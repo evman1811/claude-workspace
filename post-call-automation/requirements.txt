@@ -9,6 +9,9 @@ simple-salesforce>=1.12.6
 gspread>=6.1.2
 google-auth>=2.34.0
 
+# Webhook server
+flask>=3.0.0
+
 # Helpers
 python-dotenv>=1.0.1
 requests>=2.32.3
