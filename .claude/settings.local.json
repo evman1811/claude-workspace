@@ -45,7 +45,18 @@
       "Bash(python score_call.py --transcript /tmp/nope.txt)",
       "Bash(echo \"exit=$?\")",
       "Bash(python score_call.py --folder transcripts)",
-      "Bash(rm -f leads.csv)"
+      "Bash(rm -f leads.csv)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(mkdir -p *)",
+      "Bash(cat *)",
+      "Bash(command -v *)",
+      "Bash(which *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)"
     ]
   },
   "hooks": {
