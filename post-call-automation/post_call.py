@@ -84,6 +84,14 @@ between a salesperson and a prospect, then return a strict JSON object.
 
 {SCORING_GUIDE}
 
+Field extraction rules:
+- "contact_name": full name of the prospect. If only a first name is given, use that.
+- "company": the prospect's employer or business name. Look carefully — it may be mentioned
+  in passing (e.g. "here at Acme", "I work for...", "we at [company]", email domain, etc.).
+  If they are a private individual with no business affiliation, use "Residential".
+  Never leave this blank — always make a best-effort inference from context.
+- "email" / "phone": extract if mentioned, otherwise use "".
+
 Return ONLY valid JSON with exactly these keys:
 {{
   "contact_name": string,
