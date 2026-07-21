@@ -14,7 +14,7 @@ export type Template = {
 	name: string,
 	rarity: string,
 	baseValue: number,
-	iconId: string?, -- rbxassetid; nil uses a generated placeholder swatch
+	image: string?, -- rbxassetid from Config.TemplateImages; nil = placeholder card
 }
 
 -- rarity -> baseValue lookup from Config.
@@ -26,7 +26,13 @@ end
 local function make(id: string, name: string, rarity: string): Template
 	local baseValue = rarityValue[rarity]
 	assert(baseValue ~= nil, "Template " .. id .. " has unknown rarity " .. rarity)
-	return { id = id, name = name, rarity = rarity, baseValue = baseValue }
+	return {
+		id = id,
+		name = name,
+		rarity = rarity,
+		baseValue = baseValue,
+		image = Config.TemplateImages[id], -- nil until you add art in Config
+	}
 end
 
 -- 10 original placeholder templates spread across the 7 rarities.

@@ -43,6 +43,15 @@ Config.Rarities = {
 	{ name = "Cursed", weight = 0.01, baseValue = 10000 },
 }
 
+-- Meme images. Paste your OWN uploaded decal/image asset IDs here, keyed by template id
+-- (see Templates.lua for the ids: blank_bob, meh_manny, grumble_gary, ...).
+-- Example:  blank_bob = "rbxassetid://1234567890",
+-- Any template left out shows a clean rarity-colored placeholder card with its name, so the
+-- game looks finished before you upload art. Uploading: Studio -> Asset Manager -> Images.
+Config.TemplateImages = {
+	-- blank_bob = "rbxassetid://0000000000",
+} :: { [string]: string }
+
 -- Display colors for the codex / meme cards (client-side only).
 Config.RarityColors = {
 	Common = Color3.fromRGB(180, 180, 180),
