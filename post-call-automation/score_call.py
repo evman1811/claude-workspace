@@ -142,7 +142,10 @@ def analyze(client, model_id, transcript):
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": f"Call transcript:\n\n{transcript}"}],
     )
-    data = parse_json(msg.content[0].text)
+    # Some models (e.g. Sonnet) may return a thinking block first, so don't
+    # assume content[0] is the text — pull every text block and join them.
+    text_out = "".join(b.text for b in msg.content if getattr(b, "type", None) == "text")
+    data = parse_json(text_out)
 
     # Cost of this one call, from real token usage.
     _, in_price, out_price = next(m for m in MODELS.values() if m[0] == model_id)
