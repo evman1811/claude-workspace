@@ -61,7 +61,17 @@
       "Bash(mkdir -p \"/c/Users/Evan/rojo\")",
       "Read(//c/Users/Evan/**)",
       "Bash(curl -sL -o rojo.zip \"https://github.com/rojo-rbx/rojo/releases/download/v7.7.0/rojo-7.7.0-windows-x86_64.zip\")",
-      "PowerShell(& \"C:\\\\Users\\\\Evan\\\\rojo\\\\rojo.exe\" plugin install)"
+      "PowerShell(& \"C:\\\\Users\\\\Evan\\\\rojo\\\\rojo.exe\" plugin install)",
+      "Bash(python -c \"import anthropic; print\\('anthropic OK', anthropic.__version__\\)\")",
+      "Bash(python -c \"import dotenv; print\\('dotenv OK'\\)\")",
+      "Bash(python -m py_compile score_call.py)",
+      "Bash(python -m py_compile post_call.py)",
+      "Bash(python score_call.py --transcript does_not_exist.txt)",
+      "Bash(printf \"   \\\\n\\\\n  \\\\n\")",
+      "Bash(python score_call.py --transcript /tmp/ws.txt)",
+      "Bash(python score_call.py --demo --model sonnet)",
+      "Bash(python score_call.py --demo --model opus)",
+      "Bash(python score_call.py --demo --model haiku)"
     ]
   },
   "hooks": {
